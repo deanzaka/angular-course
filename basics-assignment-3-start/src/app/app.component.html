@@ -8,6 +8,14 @@
         <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an incrementing number)</li>
         <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
       </ol>
+      <button
+      class="btn btn-primary"
+      (click)="onButtonPressed()">Display Details</button>
+      <p *ngIf="testIf">Nothing here, moving on</p>
+      <div
+        *ngFor="let item of items; let i = index"
+        [ngStyle]="{backgroundColor: i < 5 ? 'red' : 'lightGreen'}"
+        [ngClass]="{'white-text' : i < 5 }">{{ item }}</div>
     </div>
   </div>
 </div>
